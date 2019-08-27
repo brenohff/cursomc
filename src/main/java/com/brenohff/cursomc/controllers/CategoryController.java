@@ -1,6 +1,6 @@
 package com.brenohff.cursomc.controllers;
 
-import com.brenohff.cursomc.domain.CategoryDomain;
+import com.brenohff.cursomc.entity.CategoryEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,11 +14,11 @@ import java.util.List;
 public class CategoryController {
 
     @GetMapping()
-    public ResponseEntity<List<CategoryDomain>> listAll(){
-        List<CategoryDomain> categoryList = new ArrayList<>();
+    public ResponseEntity<List<CategoryEntity>> listAll(){
+        List<CategoryEntity> categoryList = new ArrayList<>();
 
-        categoryList.add(new CategoryDomain(1, "Informática"));
-        categoryList.add(new CategoryDomain(2, "Escritório"));
+        categoryList.add(new CategoryEntity(1, "Informática"));
+        categoryList.add(new CategoryEntity(2, "Escritório"));
 
         return ResponseEntity.ok().body(categoryList);
     }
