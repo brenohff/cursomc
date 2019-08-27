@@ -1,6 +1,7 @@
 package com.brenohff.cursomc.services;
 
 import com.brenohff.cursomc.entities.CategoryEntity;
+import com.brenohff.cursomc.exception.ObjectNotFoundException;
 import com.brenohff.cursomc.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class CategoryService {
 
     public CategoryEntity getCategoryById(Integer categoryId) {
         Optional<CategoryEntity> category = categoryRepository.findById(categoryId);
-        return category.orElse(null);
+        return category.orElseThrow(() -> new ObjectNotFoundException(""));
     }
 
 }

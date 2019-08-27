@@ -1,31 +1,25 @@
 package com.brenohff.cursomc;
 
-import com.brenohff.cursomc.entities.CategoryEntity;
-import com.brenohff.cursomc.entities.ProductEntity;
-import com.brenohff.cursomc.repositories.CategoryRepository;
-import com.brenohff.cursomc.repositories.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Arrays;
-
 @SpringBootApplication
 public class CursomcApplication implements CommandLineRunner {
 
-	@Autowired
-	private CategoryRepository categoryRepository;
+    public static void main(String[] args) {
+        SpringApplication.run(CursomcApplication.class, args);
+    }
 
-	@Autowired
-	private ProductRepository productRepository;
+    @Override
+    public void run(String... args) throws Exception {
+		/*
+		@Autowired
+		private CategoryRepository categoryRepository;
 
-	public static void main(String[] args) {
-		SpringApplication.run(CursomcApplication.class, args);
-	}
+		@Autowired
+		private ProductRepository productRepository;
 
-	@Override
-	public void run(String... args) throws Exception {
 		CategoryEntity categoryEntity1 = new CategoryEntity(null, "Informática");
 		CategoryEntity categoryEntity2 = new CategoryEntity(null, "Escritório");
 
@@ -41,6 +35,6 @@ public class CursomcApplication implements CommandLineRunner {
 		p3.getCategoryList().addAll(Arrays.asList(categoryEntity1));
 
 		categoryRepository.saveAll(Arrays.asList(categoryEntity1, categoryEntity2));
-		productRepository.saveAll(Arrays.asList(p1, p2, p3));
-	}
+		productRepository.saveAll(Arrays.asList(p1, p2, p3));*/
+    }
 }
