@@ -11,6 +11,7 @@ import java.util.List;
 
 @NoArgsConstructor
 @Data
+@Table(name = "CATEGORY")
 @Entity
 public class CategoryEntity implements Serializable {
     private static final long serialVersionUID = 1L;

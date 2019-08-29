@@ -3,17 +3,18 @@ package com.brenohff.cursomc.entities;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Table(name = "CITY")
+@Table(name = "ADDRESS")
 @Entity
-public class CityEntity implements Serializable {
+public class AddressEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String street;
+    private String streetNumber;
+    private String zipCode;
 
-    @ManyToOne
-    @JoinColumn(name = "state_id")
-    private StateEntity state;
+    private ClientEntity clientEntity;
 }

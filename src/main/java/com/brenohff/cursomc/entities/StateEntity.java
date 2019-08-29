@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@Table(name = "STATE")
 @Entity
 public class StateEntity implements Serializable {
     private static final long serialVersionUID = 1L;
