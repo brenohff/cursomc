@@ -27,10 +27,4 @@ public class ProductEntity implements Serializable {
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     private List<CategoryEntity> categoryList = new ArrayList<>();
-
-    public ProductEntity(Integer id, String name, Double price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
 }

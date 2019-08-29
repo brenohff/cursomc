@@ -23,9 +23,4 @@ public class CategoryEntity implements Serializable {
     @JsonManagedReference
     @ManyToMany(mappedBy = "categoryList")
     private List<ProductEntity> productList = new ArrayList<>();
-
-    public CategoryEntity(Integer id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 }
