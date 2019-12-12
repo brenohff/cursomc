@@ -1,10 +1,14 @@
 package com.brenohff.cursomc.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Table(name = "ADDRESS")
+@Data
 @Entity
+@Table(name = "ADDRESS")
 public class AddressEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -16,5 +20,12 @@ public class AddressEntity implements Serializable {
     private String streetNumber;
     private String zipCode;
 
-    private ClientEntity clientEntity;
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private ClientEntity client;
+
+    @ManyToOne
+    @JoinColumn(name = "city_id")
+    private CityEntity city;
 }

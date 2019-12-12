@@ -2,17 +2,15 @@ package com.brenohff.cursomc.entities;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@NoArgsConstructor
 @Data
-@Table(name = "CATEGORY")
 @Entity
+@Table(name = "CATEGORY")
 public class CategoryEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -24,4 +22,5 @@ public class CategoryEntity implements Serializable {
     @JsonManagedReference
     @ManyToMany(mappedBy = "categoryList")
     private List<ProductEntity> productList = new ArrayList<>();
+
 }
